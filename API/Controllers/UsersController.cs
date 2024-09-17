@@ -1,6 +1,5 @@
 using API.Data;
 using API.Entities;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,7 +24,7 @@ public class UsersController : ControllerBase
         return users;
     }
 
-    [HttpGet("{id : int}")] // api/v1/users/2
+    [HttpGet("{id:int}")] // api/v1/users/2
     public async Task<ActionResult<AppUser>> GetUsersByIdAsync(int id)
     {
         var user = await _context.Users.FindAsync(id);
@@ -34,10 +33,10 @@ public class UsersController : ControllerBase
 
         return user;
     }
-
-    [HttpGet("{name}")] // api/v1/users/calamardo
-    public ActionResult<String> Ready(string name)
+    
+    [HttpGet("{name}")] // api/v1/users/Calamardo
+    public ActionResult<string> Ready(string name)
     {
-       return $"H1 {name}";
+        return $"Hi {name}";
     }
 }
