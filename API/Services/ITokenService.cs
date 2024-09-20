@@ -2,7 +2,7 @@ using API.Entities;
 
 namespace API.Services;
 
-public class ITokenService
+public interface ITokenService
 {
-    string CreateToken(AppUser user);
+    string CreateToken(AppUser user);    
 }
