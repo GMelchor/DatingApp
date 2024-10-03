@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RegistrerComponent } from "../registrer/registrer.component";
 import { HttpClient } from '@angular/common/http';
+import { RegistrerComponent } from '../registrer/registrer.component';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     this.registerMode = !this.registerMode;
   }
 
-  cancelRegisterMode(event: boolean): void{
+  cancelRegisterMode(event: boolean): void {
     this.registerMode = event;
   }
 
