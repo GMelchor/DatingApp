@@ -35,10 +35,7 @@ public class UsersController : BaseApiController
 
         return user;
     }
-    
+
     [HttpGet("{name}")] // api/v1/users/Calamardo
-    public ActionResult<string> Ready(string name)
-    {
-        return $"Hi {name}";
-    }
+    public ActionResult<string> Ready(string name) => $"Hi {name}";
 }
