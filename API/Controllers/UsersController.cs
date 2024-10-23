@@ -9,10 +9,12 @@ using Microsoft.AspNetCore.Mvc;
 public class UsersController : BaseApiController
 {
     private readonly IUserRepository _repository;
+    private readonly IMapper _mapper;
 
-    public UsersController(IUserRepository repository)
+    public UsersController(IUserRepository repository, IMapper mapper)
     {
         _repository = repository;
+        _mapper = mapper;
     }
 
     [HttpGet]
