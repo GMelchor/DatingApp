@@ -2,7 +2,6 @@ namespace API.Data;
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using API.DataEntities;
 using API.DTOs;
 using API.Entities;
 using AutoMapper;

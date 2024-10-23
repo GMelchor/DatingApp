@@ -1,7 +1,7 @@
 namespace API.Controllers;
 using API.Data;
 using API.DTOs;
-//using AutoMapper;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
