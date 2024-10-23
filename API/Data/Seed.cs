@@ -1,9 +1,9 @@
-/*namespace API.Data;
+namespace API.Data;
 
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
-using API.DataEntities;
+using API.Entities;
 using Microsoft.EntityFrameworkCore;
 
 public class Seed
@@ -37,4 +37,4 @@ public class Seed
 
         await context.SaveChangesAsync();
     }
-}*/
+}
