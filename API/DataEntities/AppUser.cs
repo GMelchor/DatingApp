@@ -1,6 +1,4 @@
-namespace API.Entities;
-
-using API.Extensions;
+namespace API.DataEntities;
 
 public class AppUser
 {
@@ -10,8 +8,8 @@ public class AppUser
     public byte[] PasswordSalt { get; set; } = [];
     public DateOnly BirthDay { get; set; }
     public required string KnownAs { get; set; }
-    public DateTime Created { get; set; }
-    public DateTime LastActive { get; set; }
+    public DateTime Created { get; set; } = DateTime.Now;
+    public DateTime LastActive { get; set; } = DateTime.Now;
     public required string Gender { get; set; }
     public string? Introduction { get; set; }
     public string? Interests { get; set; }
@@ -20,5 +18,5 @@ public class AppUser
     public required string Country { get; set; }
     public List<Photo> Photos { get; set; } = [];
 
-    public int GetAge() => BirthDay.CalculateAge();
+    // public int GetAge() => BirthDay.CalculateAge();
 }

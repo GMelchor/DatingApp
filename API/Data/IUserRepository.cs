@@ -1,6 +1,6 @@
 namespace API.Data;
 
-using API.Entities;
+using API.DataEntities;
 using API.DTOs;
 
 public interface IUserRepository
