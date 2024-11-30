@@ -5,7 +5,9 @@ using System.Text;
 using System.Text.Json;
 using API.DataEntities;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 
+[ExcludeFromCodeCoverage]
 public class Seed
 {
     public static async Task SeedUsersAsync(DataContext context)

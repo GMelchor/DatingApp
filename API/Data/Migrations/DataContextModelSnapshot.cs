@@ -4,12 +4,12 @@ using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-
-#nullable disable
+using System.Diagnostics.CodeAnalysis;
 
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
+    [ExcludeFromCodeCoverage]
     partial class DataContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
