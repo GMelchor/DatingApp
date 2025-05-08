@@ -43,3 +43,4 @@ public class UserRepository(DataContext context, IMapper mapper) : IUserReposito
 
     public void Update(AppUser user)
         => context.Entry(user).State = EntityState.Modified;
+}
