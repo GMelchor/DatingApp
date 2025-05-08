@@ -3,9 +3,11 @@ namespace API.Data;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
-using API.Entities;
+using API.DataEntities;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 
+[ExcludeFromCodeCoverage]
 public class Seed
 {
     public static async Task SeedUsersAsync(DataContext context)
