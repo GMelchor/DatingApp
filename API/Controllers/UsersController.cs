@@ -27,6 +27,7 @@ public class UsersController : BaseApiController
     [HttpGet]
     public async Task<ActionResult<IEnumerable<MemberResponse>>> GetAllAsync([FromQuery] UserParams userParams)
     {
+        userParams.CurrentUsername = User.GetUserName();
         var members = await _repository.GetMembersAsync(userParams);
 
         Response.AddPaginationHeader(members);
@@ -152,3 +153,4 @@ public class UsersController : BaseApiController
 
         return BadRequest("There was a problem when deleting the photo");
     }
+}
