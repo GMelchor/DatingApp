@@ -31,7 +31,11 @@ public class Startup
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         app.UseMiddleware<ExceptionMiddleware>();
-        app.UseCors((cors) => cors.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200", "https://localhost:4200"));
+        app.UseCors((cors) => cors
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials()
+            .WithOrigins("http://localhost:4200", "https://localhost:4200"));
         app.UseHttpsRedirection();
         app.UseRouting();
         app.UseAuthentication();
@@ -41,5 +45,5 @@ public class Startup
             endpoints.MapControllers();
             endpoints.MapHub<PresenceHub>("hubs/presence");
         });
-    }
+    }More actions
 }
