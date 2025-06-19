@@ -61,3 +61,4 @@ public class Seed
     {
         AllowTrailingCommas = true
     };
+}

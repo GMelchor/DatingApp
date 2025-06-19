@@ -1,4 +1,5 @@
 namespace API.Controllers;
+
 using API.DataEntities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -64,3 +65,4 @@ public class AdminController(UserManager<AppUser> userManager) : BaseApiControll
     {
         return Ok("Moderator access granted!");
     }
+}
