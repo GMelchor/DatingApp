@@ -1,5 +1,4 @@
 namespace API.Controllers;
-
 using API.DataEntities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -44,11 +43,17 @@ public class AdminController(UserManager<AppUser> userManager) : BaseApiControll
         var userRoles = await userManager.GetRolesAsync(user);
         var result = await userManager.AddToRolesAsync(user, selectedRoles.Except(userRoles));
 
-        if (!result.Succeeded) return BadRequest("Failed to add to roles");
+        if (!result.Succeeded)
+        {
+            return BadRequest("Failed to add to roles");
+        }
 
         result = await userManager.RemoveFromRolesAsync(user, userRoles.Except(selectedRoles));
 
-        if (!result.Succeeded) return BadRequest("Failed to remove from roles");
+        if (!result.Succeeded)
+        {
+            return BadRequest("Failed to remove from roles");
+        }
 
         return Ok(await userManager.GetRolesAsync(user));
     }
@@ -59,4 +64,3 @@ public class AdminController(UserManager<AppUser> userManager) : BaseApiControll
     {
         return Ok("Moderator access granted!");
     }
-}
