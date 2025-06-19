@@ -1,11 +1,10 @@
 namespace API.Data;
 
+using System.Diagnostics.CodeAnalysis;
 using System.Security.Cryptography;
-using System.Text;
 using System.Text.Json;
 using API.DataEntities;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.CodeAnalysis;
 
 [ExcludeFromCodeCoverage]
 public class Seed
@@ -29,8 +28,6 @@ public class Seed
         foreach (var user in users)
         {
             using var hmac = new HMACSHA512();
-
-            user.UserName = user.UserName.ToLowerInvariant();
 
 
 
