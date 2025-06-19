@@ -1,4 +1,5 @@
 namespace API.Data;
+
 using System.Diagnostics.CodeAnalysis;
 using System.Security.Cryptography;
 using System.Text.Json;
@@ -19,7 +20,6 @@ public class Seed
         var userData = await File.ReadAllTextAsync("Data/UserSeedData.json");
         var users = JsonSerializer.Deserialize<List<AppUser>>(userData, ReadOptions);
 
-
         if (users == null)
         {
             return;
@@ -27,11 +27,9 @@ public class Seed
 
         foreach (var user in users)
         {
+            user.UserName = user.UserName!.ToLowerInvariant();
             await userManager.CreateAsync(user, "Pa$$w0rd");
-
         }
-
-
     }
 
     private static readonly JsonSerializerOptions ReadOptions = new()
